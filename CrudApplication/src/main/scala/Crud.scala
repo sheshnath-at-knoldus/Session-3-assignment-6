@@ -25,20 +25,19 @@
 
     override def update(valueToUpdate: Int, valueToUpdateWith: Int): List[Int] = {
       if(list.indexOf(valueToUpdate)==0) throw new IndexOutOfBoundsException()
-     list = list.updated(list.indexOf(valueToUpdate), valueToUpdateWith)
-    list
+      list = list.updated(list.indexOf(valueToUpdate), valueToUpdateWith)
+      list
     }
 
     //delete the element
     override def delete(valueToDelete: Int): List[Int] = {
       if(!list.contains(valueToDelete)) throw new NoSuchElementException()
-     list = list.filterNot(_ == valueToDelete)
+      list = list.filterNot(_ == valueToDelete)
       list
     }
-
   }
 
-  // Sequence crud operation
+   // Sequence crud operation
 
   class SeqCrudOperation extends CrudOperation {
     var seq: Seq[Int] = Seq[Int]()
@@ -60,11 +59,11 @@
       val index = seq.indexOf(valueToUpdate)
       if(seq.indexOf(valueToUpdate)==0) throw new IndexOutOfBoundsException()
       if (index >= 0) {
-       seq =  seq.updated(seq.indexOf(valueToUpdate), valueToUpdateWith)
-      seq
-      } else {
-        seq
-      }
+         seq =  seq.updated(seq.indexOf(valueToUpdate), valueToUpdateWith)
+         seq
+        }else {
+         seq
+        }
     }
 
     //delete the particular element from Sequence
